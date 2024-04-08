@@ -1,0 +1,4999 @@
+{
+  "$schema" : "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "Fortify on Demand",
+        "version" : "SCA 23.1.0.0136; Rulepack 2023.1.0.0007",
+        "rules" : [ {
+          "id" : "5B98B5CF-09F8-4C43-ABC1-7768DA6E3B82",
+          "shortDescription" : {
+            "text" : "I LOVE THIS TOOL!!!"
+          },
+          "fullDescription" : {
+            "text" : "I LOVE THIS TOOL!!!"
+          },
+          "help" : {
+            "text" : I LOVE THIS TOOL!!!"
+          }
+        }, {
+          "id" : "10951BF4-F239-4F1D-8ADB-B12DE560960F",
+          "shortDescription" : {
+            "text" : "I LOVE THIS TOOL!!!"
+          },
+          "fullDescription" : {
+            "text" : "I LOVE THIS TOOL!!!"
+          },
+          "help" : {
+            "text" : "I LOVE THIS TOOL!!!"
+          }
+        }, {
+          "id" : "CEA38018-69EE-45F9-8CD4-3FE97EC8F628",
+          "shortDescription" : {
+            "text" : "I LOVE THIS TOOL!!!"
+          },
+          "fullDescription" : {
+            "text" : "I LOVE THIS TOOL!!!"
+          },
+          "help" : {
+            "text" : "I LOVE THIS TOOL!!!"
+          }
+        } ],
+        "properties" : {
+          "copyright" : "Copyright (c) 2024 Open Text",
+          "applicationName" : "FortifyBugTrackerUtility",
+          "applicationId" : 125557,
+          "releaseName" : "current",
+          "releaseId" : 250693
+        }
+      }
+    },
+    "results" : [ {
+      "ruleId" : "5B98B5CF-09F8-4C43-ABC1-7768DA6E3B82",
+      "message" : {
+        "text" : "Deserializing user-controlled object streams at runtime can allow attackers to execute arbitrary code on the server, abuse application logic, and/or lead to denial of service. [More information](https://ams.fortify.com/redirect/Issues/0064ff67-a1ec-4c54-82a4-703499c05c5e)"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "issue1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+          },
+          "region" : {
+            "startLine" : 388,
+            "endLine" : 388,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:388 - FunctionCall: clone"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 388
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "10951BF4-F239-4F1D-8ADB-B12DE560960F",
+      "message" : {
+        "text" : "The method getValue() in CLIOptionDefinition.java mishandles confidential information, which can compromise user privacy and is often illegal.Mishandling private information, such as customer passwords or social security numbers, can compromise user privacy and is often illegal.  [More information](https://ams.fortify.com/redirect/Issues/ba7ff25d-8379-4a6e-8414-ff6363f49d10)"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "issue2"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+          },
+          "region" : {
+            "startLine" : 352,
+            "endLine" : 352,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsArcher.java:43 - Read com.fortify.bugtracker.tgt.archer.cli.ICLIOptionsArcher.PRP_ARCHER_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-archer/src/main/java/com/fortify/bugtracker/tgt/archer/cli/ICLIOptionsArcher.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsArcher.java:43 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-archer/src/main/java/com/fortify/bugtracker/tgt/archer/cli/ICLIOptionsArcher.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsArcher.java:43 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-archer/src/main/java/com/fortify/bugtracker/tgt/archer/cli/ICLIOptionsArcher.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsArcher.java:43 - Assignment to com.fortify.bugtracker.tgt.archer.cli.ICLIOptionsArcher.CLI_ARCHER_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-archer/src/main/java/com/fortify/bugtracker/tgt/archer/cli/ICLIOptionsArcher.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ArcherConnectionFactory.java:64 - Read com.fortify.bugtracker.tgt.archer.cli.ICLIOptionsArcher.CLI_ARCHER_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-archer/src/main/java/com/fortify/bugtracker/tgt/archer/connection/ArcherConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 64
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ArcherConnectionFactory.java:64 - getValue(this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-archer/src/main/java/com/fortify/bugtracker/tgt/archer/connection/ArcherConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 64
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:351 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 351
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:351 - add(0 : this)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 351
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:352 - join(0 : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 352
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:352 - IllegalArgumentException(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 352
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "10951BF4-F239-4F1D-8ADB-B12DE560960F",
+      "message" : {
+        "text" : "The method getValue() in CLIOptionDefinition.java mishandles confidential information, which can compromise user privacy and is often illegal.Mishandling private information, such as customer passwords or social security numbers, can compromise user privacy and is often illegal.  [More information](https://ams.fortify.com/redirect/Issues/f8c91112-2e80-4ce3-879e-3f9cf79c4366)"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "issue3"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+          },
+          "region" : {
+            "startLine" : 355,
+            "endLine" : 355,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsJira.java:38 - Read com.fortify.bugtracker.tgt.jira.cli.ICLIOptionsJira.PRP_JIRA_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-jira/src/main/java/com/fortify/bugtracker/tgt/jira/cli/ICLIOptionsJira.java"
+                },
+                "region" : {
+                  "startLine" : 38
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsJira.java:38 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-jira/src/main/java/com/fortify/bugtracker/tgt/jira/cli/ICLIOptionsJira.java"
+                },
+                "region" : {
+                  "startLine" : 38
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsJira.java:38 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-jira/src/main/java/com/fortify/bugtracker/tgt/jira/cli/ICLIOptionsJira.java"
+                },
+                "region" : {
+                  "startLine" : 38
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsJira.java:38 - Assignment to com.fortify.bugtracker.tgt.jira.cli.ICLIOptionsJira.CLI_JIRA_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-jira/src/main/java/com/fortify/bugtracker/tgt/jira/cli/ICLIOptionsJira.java"
+                },
+                "region" : {
+                  "startLine" : 38
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "JiraConnectionFactory.java:58 - Read com.fortify.bugtracker.tgt.jira.cli.ICLIOptionsJira.CLI_JIRA_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-jira/src/main/java/com/fortify/bugtracker/tgt/jira/connection/JiraConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 58
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "JiraConnectionFactory.java:58 - getValue(this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-jira/src/main/java/com/fortify/bugtracker/tgt/jira/connection/JiraConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 58
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:355 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 355
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:355 - IllegalArgumentException(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 355
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "10951BF4-F239-4F1D-8ADB-B12DE560960F",
+      "message" : {
+        "text" : "The method getValue() in CLIOptionDefinition.java mishandles confidential information, which can compromise user privacy and is often illegal.Mishandling private information, such as customer passwords or social security numbers, can compromise user privacy and is often illegal.  [More information](https://ams.fortify.com/redirect/Issues/c8bb46ce-a3e3-4d25-b646-986cd8a6fa61)"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "issue4"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+          },
+          "region" : {
+            "startLine" : 355,
+            "endLine" : 355,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsOctane.java:41 - Read com.fortify.bugtracker.tgt.octane.cli.ICLIOptionsOctane.PRP_OCTANE_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-octane/src/main/java/com/fortify/bugtracker/tgt/octane/cli/ICLIOptionsOctane.java"
+                },
+                "region" : {
+                  "startLine" : 41
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsOctane.java:41 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-octane/src/main/java/com/fortify/bugtracker/tgt/octane/cli/ICLIOptionsOctane.java"
+                },
+                "region" : {
+                  "startLine" : 41
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsOctane.java:41 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-octane/src/main/java/com/fortify/bugtracker/tgt/octane/cli/ICLIOptionsOctane.java"
+                },
+                "region" : {
+                  "startLine" : 41
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsOctane.java:41 - dependsOnOptions(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-octane/src/main/java/com/fortify/bugtracker/tgt/octane/cli/ICLIOptionsOctane.java"
+                },
+                "region" : {
+                  "startLine" : 41
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:309 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 309
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsOctane.java:41 - Assignment to com.fortify.bugtracker.tgt.octane.cli.ICLIOptionsOctane.CLI_OCTANE_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-octane/src/main/java/com/fortify/bugtracker/tgt/octane/cli/ICLIOptionsOctane.java"
+                },
+                "region" : {
+                  "startLine" : 41
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "OctaneConnectionFactory.java:62 - Read com.fortify.bugtracker.tgt.octane.cli.ICLIOptionsOctane.CLI_OCTANE_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-octane/src/main/java/com/fortify/bugtracker/tgt/octane/connection/OctaneConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 62
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "OctaneConnectionFactory.java:62 - getValue(this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-octane/src/main/java/com/fortify/bugtracker/tgt/octane/connection/OctaneConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 62
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:355 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 355
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:355 - IllegalArgumentException(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 355
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "10951BF4-F239-4F1D-8ADB-B12DE560960F",
+      "message" : {
+        "text" : "The method getValue() in CLIOptionDefinition.java mishandles confidential information, which can compromise user privacy and is often illegal.Mishandling private information, such as customer passwords or social security numbers, can compromise user privacy and is often illegal.  [More information](https://ams.fortify.com/redirect/Issues/1d4e3558-0867-4232-9aa8-df287765d4f4)"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "issue5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+          },
+          "region" : {
+            "startLine" : 352,
+            "endLine" : 352,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsFoD.java:47 - Read com.fortify.bugtracker.src.fod.cli.ICLIOptionsFoD.PRP_FOD_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-fod/src/main/java/com/fortify/bugtracker/src/fod/cli/ICLIOptionsFoD.java"
+                },
+                "region" : {
+                  "startLine" : 47
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsFoD.java:47 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-fod/src/main/java/com/fortify/bugtracker/src/fod/cli/ICLIOptionsFoD.java"
+                },
+                "region" : {
+                  "startLine" : 47
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsFoD.java:47 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-fod/src/main/java/com/fortify/bugtracker/src/fod/cli/ICLIOptionsFoD.java"
+                },
+                "region" : {
+                  "startLine" : 47
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsFoD.java:47 - dependsOnOptions(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-fod/src/main/java/com/fortify/bugtracker/src/fod/cli/ICLIOptionsFoD.java"
+                },
+                "region" : {
+                  "startLine" : 47
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:309 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 309
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsFoD.java:47 - Assignment to com.fortify.bugtracker.src.fod.cli.ICLIOptionsFoD.CLI_FOD_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-fod/src/main/java/com/fortify/bugtracker/src/fod/cli/ICLIOptionsFoD.java"
+                },
+                "region" : {
+                  "startLine" : 47
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "FoDConnectionFactory.java:73 - Read com.fortify.bugtracker.src.fod.cli.ICLIOptionsFoD.CLI_FOD_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-fod/src/main/java/com/fortify/bugtracker/src/fod/connection/FoDConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 73
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "FoDConnectionFactory.java:73 - getValue(this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-fod/src/main/java/com/fortify/bugtracker/src/fod/connection/FoDConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 73
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:351 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 351
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:351 - add(0 : this)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 351
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:352 - join(0 : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 352
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:352 - IllegalArgumentException(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 352
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "10951BF4-F239-4F1D-8ADB-B12DE560960F",
+      "message" : {
+        "text" : "The method getValue() in CLIOptionDefinition.java mishandles confidential information, which can compromise user privacy and is often illegal.Mishandling private information, such as customer passwords or social security numbers, can compromise user privacy and is often illegal.  [More information](https://ams.fortify.com/redirect/Issues/da945137-021c-42d4-a817-873aca0d9edb)"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "issue6"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+          },
+          "region" : {
+            "startLine" : 355,
+            "endLine" : 355,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsArcher.java:43 - Read com.fortify.bugtracker.tgt.archer.cli.ICLIOptionsArcher.PRP_ARCHER_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-archer/src/main/java/com/fortify/bugtracker/tgt/archer/cli/ICLIOptionsArcher.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsArcher.java:43 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-archer/src/main/java/com/fortify/bugtracker/tgt/archer/cli/ICLIOptionsArcher.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsArcher.java:43 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-archer/src/main/java/com/fortify/bugtracker/tgt/archer/cli/ICLIOptionsArcher.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsArcher.java:43 - Assignment to com.fortify.bugtracker.tgt.archer.cli.ICLIOptionsArcher.CLI_ARCHER_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-archer/src/main/java/com/fortify/bugtracker/tgt/archer/cli/ICLIOptionsArcher.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ArcherConnectionFactory.java:64 - Read com.fortify.bugtracker.tgt.archer.cli.ICLIOptionsArcher.CLI_ARCHER_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-archer/src/main/java/com/fortify/bugtracker/tgt/archer/connection/ArcherConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 64
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ArcherConnectionFactory.java:64 - getValue(this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-archer/src/main/java/com/fortify/bugtracker/tgt/archer/connection/ArcherConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 64
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:355 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 355
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:355 - IllegalArgumentException(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 355
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "10951BF4-F239-4F1D-8ADB-B12DE560960F",
+      "message" : {
+        "text" : "The method getValue() in CLIOptionDefinition.java mishandles confidential information, which can compromise user privacy and is often illegal.Mishandling private information, such as customer passwords or social security numbers, can compromise user privacy and is often illegal.  [More information](https://ams.fortify.com/redirect/Issues/3fc2f76d-2df0-4726-9e00-1a60d1534d0a)"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "issue7"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+          },
+          "region" : {
+            "startLine" : 352,
+            "endLine" : 352,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Read com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.PRP_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - dependsOnOptions(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:309 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 309
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Assignment to com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.CLI_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:68 - Read com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.CLI_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 68
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:68 - getValue(this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 68
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:351 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 351
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:351 - add(0 : this)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 351
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:352 - join(0 : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 352
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:352 - IllegalArgumentException(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 352
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "10951BF4-F239-4F1D-8ADB-B12DE560960F",
+      "message" : {
+        "text" : "The method getValue() in CLIOptionDefinition.java mishandles confidential information, which can compromise user privacy and is often illegal.Mishandling private information, such as customer passwords or social security numbers, can compromise user privacy and is often illegal.  [More information](https://ams.fortify.com/redirect/Issues/b00e69fe-a773-45aa-b525-50b637401f6e)"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "issue8"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+          },
+          "region" : {
+            "startLine" : 352,
+            "endLine" : 352,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsJira.java:38 - Read com.fortify.bugtracker.tgt.jira.cli.ICLIOptionsJira.PRP_JIRA_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-jira/src/main/java/com/fortify/bugtracker/tgt/jira/cli/ICLIOptionsJira.java"
+                },
+                "region" : {
+                  "startLine" : 38
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsJira.java:38 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-jira/src/main/java/com/fortify/bugtracker/tgt/jira/cli/ICLIOptionsJira.java"
+                },
+                "region" : {
+                  "startLine" : 38
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsJira.java:38 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-jira/src/main/java/com/fortify/bugtracker/tgt/jira/cli/ICLIOptionsJira.java"
+                },
+                "region" : {
+                  "startLine" : 38
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsJira.java:38 - Assignment to com.fortify.bugtracker.tgt.jira.cli.ICLIOptionsJira.CLI_JIRA_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-jira/src/main/java/com/fortify/bugtracker/tgt/jira/cli/ICLIOptionsJira.java"
+                },
+                "region" : {
+                  "startLine" : 38
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "JiraConnectionFactory.java:58 - Read com.fortify.bugtracker.tgt.jira.cli.ICLIOptionsJira.CLI_JIRA_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-jira/src/main/java/com/fortify/bugtracker/tgt/jira/connection/JiraConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 58
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "JiraConnectionFactory.java:58 - getValue(this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-jira/src/main/java/com/fortify/bugtracker/tgt/jira/connection/JiraConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 58
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:351 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 351
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:351 - add(0 : this)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 351
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:352 - join(0 : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 352
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:352 - IllegalArgumentException(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 352
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "10951BF4-F239-4F1D-8ADB-B12DE560960F",
+      "message" : {
+        "text" : "The method getValue() in CLIOptionDefinition.java mishandles confidential information, which can compromise user privacy and is often illegal.Mishandling private information, such as customer passwords or social security numbers, can compromise user privacy and is often illegal.  [More information](https://ams.fortify.com/redirect/Issues/25054fe0-8f92-42e3-ad9c-060224833f69)"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "issue9"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+          },
+          "region" : {
+            "startLine" : 355,
+            "endLine" : 355,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Read com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.PRP_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - dependsOnOptions(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:309 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 309
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Assignment to com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.CLI_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:68 - Read com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.CLI_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 68
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:68 - getValue(this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 68
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:355 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 355
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:355 - IllegalArgumentException(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 355
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "10951BF4-F239-4F1D-8ADB-B12DE560960F",
+      "message" : {
+        "text" : "The method getValue() in CLIOptionDefinition.java mishandles confidential information, which can compromise user privacy and is often illegal.Mishandling private information, such as customer passwords or social security numbers, can compromise user privacy and is often illegal.  [More information](https://ams.fortify.com/redirect/Issues/8cf1333b-5cc4-4450-8b6a-c9451c4e1ce4)"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "issue10"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+          },
+          "region" : {
+            "startLine" : 352,
+            "endLine" : 352,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsOctane.java:41 - Read com.fortify.bugtracker.tgt.octane.cli.ICLIOptionsOctane.PRP_OCTANE_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-octane/src/main/java/com/fortify/bugtracker/tgt/octane/cli/ICLIOptionsOctane.java"
+                },
+                "region" : {
+                  "startLine" : 41
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsOctane.java:41 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-octane/src/main/java/com/fortify/bugtracker/tgt/octane/cli/ICLIOptionsOctane.java"
+                },
+                "region" : {
+                  "startLine" : 41
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsOctane.java:41 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-octane/src/main/java/com/fortify/bugtracker/tgt/octane/cli/ICLIOptionsOctane.java"
+                },
+                "region" : {
+                  "startLine" : 41
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsOctane.java:41 - dependsOnOptions(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-octane/src/main/java/com/fortify/bugtracker/tgt/octane/cli/ICLIOptionsOctane.java"
+                },
+                "region" : {
+                  "startLine" : 41
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:309 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 309
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsOctane.java:41 - Assignment to com.fortify.bugtracker.tgt.octane.cli.ICLIOptionsOctane.CLI_OCTANE_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-octane/src/main/java/com/fortify/bugtracker/tgt/octane/cli/ICLIOptionsOctane.java"
+                },
+                "region" : {
+                  "startLine" : 41
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "OctaneConnectionFactory.java:62 - Read com.fortify.bugtracker.tgt.octane.cli.ICLIOptionsOctane.CLI_OCTANE_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-octane/src/main/java/com/fortify/bugtracker/tgt/octane/connection/OctaneConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 62
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "OctaneConnectionFactory.java:62 - getValue(this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-target-octane/src/main/java/com/fortify/bugtracker/tgt/octane/connection/OctaneConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 62
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:351 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 351
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:351 - add(0 : this)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 351
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:352 - join(0 : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 352
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:352 - IllegalArgumentException(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 352
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "10951BF4-F239-4F1D-8ADB-B12DE560960F",
+      "message" : {
+        "text" : "The method getValue() in CLIOptionDefinition.java mishandles confidential information, which can compromise user privacy and is often illegal.Mishandling private information, such as customer passwords or social security numbers, can compromise user privacy and is often illegal.  [More information](https://ams.fortify.com/redirect/Issues/c5c7afb8-2e2b-4ed8-a0e0-9756d2c45e7f)"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "issue11"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+          },
+          "region" : {
+            "startLine" : 355,
+            "endLine" : 355,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsFoD.java:47 - Read com.fortify.bugtracker.src.fod.cli.ICLIOptionsFoD.PRP_FOD_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-fod/src/main/java/com/fortify/bugtracker/src/fod/cli/ICLIOptionsFoD.java"
+                },
+                "region" : {
+                  "startLine" : 47
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsFoD.java:47 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-fod/src/main/java/com/fortify/bugtracker/src/fod/cli/ICLIOptionsFoD.java"
+                },
+                "region" : {
+                  "startLine" : 47
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsFoD.java:47 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-fod/src/main/java/com/fortify/bugtracker/src/fod/cli/ICLIOptionsFoD.java"
+                },
+                "region" : {
+                  "startLine" : 47
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsFoD.java:47 - dependsOnOptions(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-fod/src/main/java/com/fortify/bugtracker/src/fod/cli/ICLIOptionsFoD.java"
+                },
+                "region" : {
+                  "startLine" : 47
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:309 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 309
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsFoD.java:47 - Assignment to com.fortify.bugtracker.src.fod.cli.ICLIOptionsFoD.CLI_FOD_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-fod/src/main/java/com/fortify/bugtracker/src/fod/cli/ICLIOptionsFoD.java"
+                },
+                "region" : {
+                  "startLine" : 47
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "FoDConnectionFactory.java:73 - Read com.fortify.bugtracker.src.fod.cli.ICLIOptionsFoD.CLI_FOD_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-fod/src/main/java/com/fortify/bugtracker/src/fod/connection/FoDConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 73
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "FoDConnectionFactory.java:73 - getValue(this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-fod/src/main/java/com/fortify/bugtracker/src/fod/connection/FoDConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 73
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:355 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 355
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "CLIOptionDefinition.java:355 - IllegalArgumentException(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 355
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "CEA38018-69EE-45F9-8CD4-3FE97EC8F628",
+      "message" : {
+        "text" : "The method process() in AbstractProcessor.java mishandles confidential information, which can compromise user privacy and is often illegal.Mishandling private information, such as customer passwords or social security numbers, can compromise user privacy and is often illegal.  [More information](https://ams.fortify.com/redirect/Issues/149a5438-aa6a-4231-9864-c80a38b000f1)"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "issue12"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+          },
+          "region" : {
+            "startLine" : 84,
+            "endLine" : 84,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Read com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.PRP_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - dependsOnOptions(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:309 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 309
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Assignment to com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.CLI_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:68 - getValue(this.name : 0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 68
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "      CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - put(0 : this.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:55 - createConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 55
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSSCSourceVulnerabilityProcessor.java:101 - getConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-ssc/src/main/java/com/fortify/bugtracker/src/ssc/processor/AbstractSSCSourceVulnerabilityProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 101
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceVulnerabilityProcessor.java:89 - checkContext(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceVulnerabilityProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 89
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceVulnerabilityProcessor.java:90 - process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceVulnerabilityProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 90
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:84 - toString(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 84
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:84 - trace(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 84
+                }
+              }
+            }
+          } ]
+        }, {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Read com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.PRP_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - dependsOnOptions(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:309 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 309
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Assignment to com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.CLI_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:68 - getValue(this.name : 0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 68
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "      CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - put(0 : this.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:55 - createConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 55
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCSourceProcessorRetrieveVulnerabilities.java:50 - getConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-ssc/src/main/java/com/fortify/bugtracker/src/ssc/processor/SSCSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 50
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceProcessorRetrieveVulnerabilities.java:56 - getLogMessageStart(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 56
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceProcessorRetrieveVulnerabilities.java:78 - process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 78
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:84 - toString(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 84
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:84 - trace(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 84
+                }
+              }
+            }
+          } ]
+        }, {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Read com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.PRP_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - dependsOnOptions(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:309 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 309
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Assignment to com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.CLI_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:68 - getValue(this.name : 0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 68
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "      CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - put(0 : this.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:55 - createConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 55
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCSourceProcessorRetrieveVulnerabilities.java:50 - getConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-ssc/src/main/java/com/fortify/bugtracker/src/ssc/processor/SSCSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 50
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceProcessorRetrieveVulnerabilities.java:56 - getLogMessageStart(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 56
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceProcessorRetrieveVulnerabilities.java:78 - process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 78
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceVulnerabilityProcessor.java:90 - process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceVulnerabilityProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 90
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:84 - toString(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 84
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:84 - trace(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 84
+                }
+              }
+            }
+          } ]
+        }, {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Read com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.PRP_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - dependsOnOptions(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:309 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 309
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Assignment to com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.CLI_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:68 - getValue(this.name : 0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 68
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "      CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - put(0 : this.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:55 - createConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 55
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSSCSourceVulnerabilityProcessor.java:101 - getConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-ssc/src/main/java/com/fortify/bugtracker/src/ssc/processor/AbstractSSCSourceVulnerabilityProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 101
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceVulnerabilityProcessor.java:89 - checkContext(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceVulnerabilityProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 89
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceVulnerabilityProcessor.java:90 - process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceVulnerabilityProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 90
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:82 - _process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 82
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:101 - process(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 101
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceProcessorRetrieveVulnerabilities.java:54 - process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 54
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:84 - toString(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 84
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:84 - trace(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 84
+                }
+              }
+            }
+          } ]
+        }, {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Read com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.PRP_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - dependsOnOptions(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:309 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 309
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Assignment to com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.CLI_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:68 - getValue(this.name : 0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 68
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "      CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - put(0 : this.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:55 - createConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 55
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCSourceProcessorRetrieveVulnerabilities.java:50 - getConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-ssc/src/main/java/com/fortify/bugtracker/src/ssc/processor/SSCSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 50
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceProcessorRetrieveVulnerabilities.java:56 - getLogMessageStart(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 56
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceProcessorRetrieveVulnerabilities.java:78 - process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 78
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:82 - _process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 82
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:101 - process(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 101
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceProcessorRetrieveVulnerabilities.java:54 - process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 54
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:84 - toString(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 84
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:84 - trace(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 84
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "CEA38018-69EE-45F9-8CD4-3FE97EC8F628",
+      "message" : {
+        "text" : "The method process() in AbstractProcessor.java mishandles confidential information, which can compromise user privacy and is often illegal.Mishandling private information, such as customer passwords or social security numbers, can compromise user privacy and is often illegal.  [More information](https://ams.fortify.com/redirect/Issues/7492c0bb-5c8a-4206-9acc-072d0088e48d)"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "issue13"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+          },
+          "region" : {
+            "startLine" : 80,
+            "endLine" : 80,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Read com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.PRP_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - dependsOnOptions(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:309 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 309
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Assignment to com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.CLI_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:68 - getValue(this.name : 0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 68
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "      CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - put(0 : this.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:55 - createConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 55
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSSCSourceVulnerabilityProcessor.java:101 - getConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-ssc/src/main/java/com/fortify/bugtracker/src/ssc/processor/AbstractSSCSourceVulnerabilityProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 101
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceVulnerabilityProcessor.java:89 - checkContext(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceVulnerabilityProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 89
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceVulnerabilityProcessor.java:90 - process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceVulnerabilityProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 90
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:80 - toString(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 80
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:80 - trace(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 80
+                }
+              }
+            }
+          } ]
+        }, {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Read com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.PRP_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - dependsOnOptions(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:309 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 309
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Assignment to com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.CLI_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:68 - getValue(this.name : 0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 68
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "      CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - put(0 : this.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:55 - createConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 55
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCSourceProcessorRetrieveVulnerabilities.java:50 - getConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-ssc/src/main/java/com/fortify/bugtracker/src/ssc/processor/SSCSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 50
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceProcessorRetrieveVulnerabilities.java:56 - getLogMessageStart(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 56
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceProcessorRetrieveVulnerabilities.java:78 - process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 78
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:80 - toString(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 80
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:80 - trace(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 80
+                }
+              }
+            }
+          } ]
+        }, {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Read com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.PRP_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - dependsOnOptions(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:309 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 309
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Assignment to com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.CLI_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:68 - getValue(this.name : 0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 68
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "      CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - put(0 : this.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:55 - createConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 55
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCSourceProcessorRetrieveVulnerabilities.java:50 - getConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-ssc/src/main/java/com/fortify/bugtracker/src/ssc/processor/SSCSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 50
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceProcessorRetrieveVulnerabilities.java:56 - getLogMessageStart(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 56
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceProcessorRetrieveVulnerabilities.java:78 - process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 78
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceVulnerabilityProcessor.java:90 - process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceVulnerabilityProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 90
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:80 - toString(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 80
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:80 - trace(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 80
+                }
+              }
+            }
+          } ]
+        }, {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Read com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.PRP_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - dependsOnOptions(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:309 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 309
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Assignment to com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.CLI_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:68 - getValue(this.name : 0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 68
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "      CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - put(0 : this.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:55 - createConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 55
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSSCSourceVulnerabilityProcessor.java:101 - getConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-ssc/src/main/java/com/fortify/bugtracker/src/ssc/processor/AbstractSSCSourceVulnerabilityProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 101
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceVulnerabilityProcessor.java:89 - checkContext(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceVulnerabilityProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 89
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceVulnerabilityProcessor.java:90 - process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceVulnerabilityProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 90
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:82 - _process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 82
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:101 - process(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 101
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceProcessorRetrieveVulnerabilities.java:54 - process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 54
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:80 - toString(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 80
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:80 - trace(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 80
+                }
+              }
+            }
+          } ]
+        }, {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Read com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.PRP_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - CLIOptionDefinition(1 : this.name)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:93 - Assignment to this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 93
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - isPassword(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:263 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 263
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - dependsOnOptions(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:309 - Return this"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 309
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "ICLIOptionsSSC.java:43 - Assignment to com.fortify.bugtracker.common.ssc.cli.ICLIOptionsSSC.CLI_SSC_PASSWORD"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/cli/ICLIOptionsSSC.java"
+                },
+                "region" : {
+                  "startLine" : 43
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:68 - getValue(this.name : 0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 68
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - getName(this.name : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "      CLIOptionDefinition.java:108 - Return this.name"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 108
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "   CLIOptionDefinition.java:346 - put(0 : this.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/cli/CLIOptionDefinition.java"
+                },
+                "region" : {
+                  "startLine" : 346
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCConnectionFactory.java:55 - createConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-ssc-common/src/main/java/com/fortify/bugtracker/common/ssc/connection/SSCConnectionFactory.java"
+                },
+                "region" : {
+                  "startLine" : 55
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "SSCSourceProcessorRetrieveVulnerabilities.java:50 - getConnection(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-source-ssc/src/main/java/com/fortify/bugtracker/src/ssc/processor/SSCSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 50
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceProcessorRetrieveVulnerabilities.java:56 - getLogMessageStart(0.{keys})"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 56
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceProcessorRetrieveVulnerabilities.java:78 - process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 78
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:82 - _process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 82
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:101 - process(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 101
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractSourceProcessorRetrieveVulnerabilities.java:54 - process(1)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "bugtracker-common/src/main/java/com/fortify/bugtracker/common/src/processor/AbstractSourceProcessorRetrieveVulnerabilities.java"
+                },
+                "region" : {
+                  "startLine" : 54
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:80 - toString(this : return)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 80
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "AbstractProcessor.java:80 - trace(0)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "processrunner/src/main/java/com/fortify/processrunner/processor/AbstractProcessor.java"
+                },
+                "region" : {
+                  "startLine" : 80
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    } ]
+  } ]
+}

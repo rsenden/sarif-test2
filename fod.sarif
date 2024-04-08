@@ -9,7 +9,7 @@
         "rules" : [ {
           "id" : "5B98B5CF-09F8-4C43-ABC1-7768DA6E3B82",
           "shortDescription" : {
-            "text" : "I LOVE THIS TOOL!!!"
+            "text" : "Dynamic Code Evaluation: Unsafe Deserialization"
           },
           "fullDescription" : {
             "text" : "I LOVE THIS TOOL!!!"
@@ -20,7 +20,7 @@
         }, {
           "id" : "10951BF4-F239-4F1D-8ADB-B12DE560960F",
           "shortDescription" : {
-            "text" : "I LOVE THIS TOOL!!!"
+            "text" : "Privacy Violation"
           },
           "fullDescription" : {
             "text" : "I LOVE THIS TOOL!!!"
@@ -31,7 +31,7 @@
         }, {
           "id" : "CEA38018-69EE-45F9-8CD4-3FE97EC8F628",
           "shortDescription" : {
-            "text" : "I LOVE THIS TOOL!!!"
+            "text" : "Privacy Violation"
           },
           "fullDescription" : {
             "text" : "I LOVE THIS TOOL!!!"
